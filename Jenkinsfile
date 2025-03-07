@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'URL_DU_REPO_GITHUB'
+                 git 'https://github.com/Jacobkitams/Myhospital.git'
             }
         }
 
