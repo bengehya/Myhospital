@@ -9,20 +9,20 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'URL_DU_REPO_GITHUB'
+                git 'https://github.com/Jacobkitams/Myhospital.git'
             }
         }
 
         stage('Build') {
             steps {
-                sh './gradlew clean build'
+                 sh './gradlew build'
             }
         }
 
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    sh './gradlew sonarqube'
+                    sh "./gradlew sonarqube -Dsonar.login=${SONAR_TOKEN
                 }
             }
         }
